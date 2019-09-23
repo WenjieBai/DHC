@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{5D579AE0-16FC-4327-AC5E-FDD55DF19E79}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SP/Program.cs">
+    <Files>
+      <File FileName="SP/Program.cs" Line="50" Column="32" />
+      <File FileName="SP/Plot.cs" Line="22" Column="50" />
+      <File FileName="SP/ExtractHashCosts.cs" />
+      <File FileName="SP/EqualProbabilityMass.cs" />
+      <File FileName="SP/IPartitionPasswords.cs" />
+      <File FileName="SP/GetHashCost.cs" Line="15" Column="74" />
+      <File FileName="SP/BestResponseGiven_k.cs" />
+      <File FileName="SP/PasswordRepository.cs" />
+      <File FileName="SP/PasswordEquivalenceClass.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.SP PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,11 @@
+/Users/wenjiebai/Projects/SP/SP/obj/Debug/netcoreapp2.1/SP.csprojAssemblyReference.cache
+/Users/wenjiebai/Projects/SP/SP/obj/Debug/netcoreapp2.1/SP.csproj.CoreCompileInputs.cache
+/Users/wenjiebai/Projects/SP/SP/obj/Debug/netcoreapp2.1/SP.AssemblyInfoInputs.cache
+/Users/wenjiebai/Projects/SP/SP/obj/Debug/netcoreapp2.1/SP.AssemblyInfo.cs
+/Users/wenjiebai/Projects/SP/SP/bin/Debug/netcoreapp2.1/SP.deps.json
+/Users/wenjiebai/Projects/SP/SP/bin/Debug/netcoreapp2.1/SP.runtimeconfig.json
+/Users/wenjiebai/Projects/SP/SP/bin/Debug/netcoreapp2.1/SP.runtimeconfig.dev.json
+/Users/wenjiebai/Projects/SP/SP/bin/Debug/netcoreapp2.1/SP.dll
+/Users/wenjiebai/Projects/SP/SP/bin/Debug/netcoreapp2.1/SP.pdb
+/Users/wenjiebai/Projects/SP/SP/obj/Debug/netcoreapp2.1/SP.dll
+/Users/wenjiebai/Projects/SP/SP/obj/Debug/netcoreapp2.1/SP.pdb

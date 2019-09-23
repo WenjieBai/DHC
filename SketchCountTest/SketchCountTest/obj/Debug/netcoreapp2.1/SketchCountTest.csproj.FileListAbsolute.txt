@@ -1,0 +1,11 @@
+/Users/wenjiebai/Projects/SketchCountTest/SketchCountTest/obj/Debug/netcoreapp2.1/SketchCountTest.csprojAssemblyReference.cache
+/Users/wenjiebai/Projects/SketchCountTest/SketchCountTest/obj/Debug/netcoreapp2.1/SketchCountTest.csproj.CoreCompileInputs.cache
+/Users/wenjiebai/Projects/SketchCountTest/SketchCountTest/obj/Debug/netcoreapp2.1/SketchCountTest.AssemblyInfoInputs.cache
+/Users/wenjiebai/Projects/SketchCountTest/SketchCountTest/obj/Debug/netcoreapp2.1/SketchCountTest.AssemblyInfo.cs
+/Users/wenjiebai/Projects/SketchCountTest/SketchCountTest/bin/Debug/netcoreapp2.1/SketchCountTest.deps.json
+/Users/wenjiebai/Projects/SketchCountTest/SketchCountTest/bin/Debug/netcoreapp2.1/SketchCountTest.runtimeconfig.json
+/Users/wenjiebai/Projects/SketchCountTest/SketchCountTest/bin/Debug/netcoreapp2.1/SketchCountTest.runtimeconfig.dev.json
+/Users/wenjiebai/Projects/SketchCountTest/SketchCountTest/bin/Debug/netcoreapp2.1/SketchCountTest.dll
+/Users/wenjiebai/Projects/SketchCountTest/SketchCountTest/bin/Debug/netcoreapp2.1/SketchCountTest.pdb
+/Users/wenjiebai/Projects/SketchCountTest/SketchCountTest/obj/Debug/netcoreapp2.1/SketchCountTest.dll
+/Users/wenjiebai/Projects/SketchCountTest/SketchCountTest/obj/Debug/netcoreapp2.1/SketchCountTest.pdb

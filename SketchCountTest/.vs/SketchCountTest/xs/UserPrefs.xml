@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{F9EDB8E4-6D12-43EA-89CD-22C12A53D2D8}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SketchCountTest/EstimateProbability.cs">
+    <Files>
+      <File FileName="SketchCountTest/Program.cs" Line="50" Column="44" />
+      <File FileName="SketchCountTest/CountSketch.cs" />
+      <File FileName="SketchCountTest/EstimateProbability.cs" Line="27" Column="90" />
+      <File FileName="SketchCountTest/Password.cs" />
+      <File FileName="SketchCountTest/PasswordEquivalenceClass.cs" />
+      <File FileName="SketchCountTest/GenerateFakePasswords.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.SketchCountTest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

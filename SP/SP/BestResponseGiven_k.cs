@@ -1,0 +1,144 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace SP
+{
+    public class BestResponseGiven_k
+    {
+        private EqualProbabilityMass pwdPartitions;
+        private double passwordValue;
+
+
+        public BestResponseGiven_k(EqualProbabilityMass epm, double pv)
+        {
+            pwdPartitions = epm;
+            passwordValue = pv;
+        }
+
+        public void SortAccordingToCheckingPriority(List<double> hashCost)
+        {
+            foreach (var p in pwdPartitions.weakPasswords)
+            {
+                p.CheckingPriority = p.EstimatedProbability / hashCost[0];
+                p.HashCost = hashCost[0];
+            }
+            foreach (var p in pwdPartitions.mediumPasswords)
+            {
+                p.CheckingPriority = p.EstimatedProbability / hashCost[1];
+                p.HashCost = hashCost[1];
+            }
+            foreach (var p in pwdPartitions.strongPasswords)
+            {
+                p.CheckingPriority = p.EstimatedProbability / hashCost[2];
+                p.HashCost = hashCost[2];
+            }
+
+            pwdPartitions.PR.PwcList.Sort();
+
+        }
+
+
+        public double Alg4(List<double> hashCost)
+        {
+            SortAccordingToCheckingPriority(hashCost);
+
+            double successRate = 0;
+            double successRateMax = 0;
+            double utility = 0;
+            double utilityMax = 0;
+            int numberOfGuesses = 0;
+            int numberOfGuessesMax = 0;
+
+            for (int i = 0; i < pwdPartitions.PR.PwcList.Count; i++)
+            {
+                double probabilitySum = 0;
+                double deltaGain = 0;
+                double deltaCost = 0;
+                double delta = 0;
+           
+
+                numberOfGuesses += pwdPartitions.PR.PwcList[i].PasswordOccurrence;
+                successRate += pwdPartitions.PR.PwcList[i].EstimatedProbability * pwdPartitions.PR.PwcList[i].PasswordOccurrence;
+
+                for (int j = 0; j < i; j++)
+                {
+                    probabilitySum += pwdPartitions.PR.PwcList[j].EstimatedProbability * pwdPartitions.PR.PwcList[j].PasswordOccurrence;
+                }
+
+                deltaGain = passwordValue * pwdPartitions.PR.PwcList[i].EstimatedProbability * pwdPartitions.PR.PwcList[i].PasswordOccurrence;
+                deltaCost = pwdPartitions.PR.PwcList[i].HashCost * ((1 - probabilitySum) * pwdPartitions.PR.PwcList[i].PasswordOccurrence - (pwdPartitions.PR.PwcList[i].PasswordOccurrence - 1) * (pwdPartitions.PR.PwcList[i].PasswordOccurrence - 2) / 2 * pwdPartitions.PR.PwcList[i].EstimatedProbability);
+                delta = deltaGain - deltaCost;
+                utility += delta;
+                if (utility > utilityMax)
+                {
+                    numberOfGuessesMax = numberOfGuesses;
+                    successRateMax = successRate;
+                    utilityMax = utility;
+                }
+
+            }
+            return successRateMax;
+        }
+
+
+        static IEnumerable<IEnumerable<T>> GetPermutationsWithRept<T>(IEnumerable<T> list, int length)
+        {
+            if (length == 1) return list.Select(t => new T[] { t });
+            return GetPermutationsWithRept(list, length - 1)
+                                                           .SelectMany(t => list,
+                                                            (t1, t2) => t1.Concat(new T[] { t2 }));
+        }
+
+        public (List<double>,double) Alg5()
+        {
+
+            double Cmax = 1;
+            List<double> hashCostCandidate = new List<double>() { 1, 3, 9, 27, 81, 243 };
+            IEnumerable<IEnumerable<double>> result = GetPermutationsWithRept(hashCostCandidate, 3);
+            List<List<double>> list = new List<List<double>>();
+            foreach (var value in result)
+            {
+                List<double> sublist = value.ToList();
+                list.Add(sublist);
+            }
+            List<double> kStar = new List<double>();
+            double adversarySuccessRateStar = 2;
+            int numberOfGuessesStar = 0;
+
+            foreach (var k0 in list)
+            {
+                double adversarySuccessRate = 0;
+                int numberOfGuesses = 0;
+                List<double> hashCostParameter = new List<double>();
+                double T = k0[0] * pwdPartitions.probabilityMass_weak +
+                           k0[1] * pwdPartitions.probabilityMass_medium +
+                           k0[2] * pwdPartitions.probabilityMass_strong;
+
+                double c = Cmax / T;
+
+                for (int i = 0; i < k0.Count; i++)
+                {
+                    hashCostParameter.Add(k0[i] * c);
+                    //Console.WriteLine(hashCostParameter[i]);
+                }
+
+                adversarySuccessRate = Alg4(hashCostParameter);
+                //Console.WriteLine("adv "+adversarySuccessRate);
+
+                if (adversarySuccessRate < adversarySuccessRateStar - 0.000000000001)
+                {
+                    adversarySuccessRateStar = adversarySuccessRate;
+                    numberOfGuessesStar = numberOfGuesses;
+                    kStar = hashCostParameter.ToList();
+                    //Console.WriteLine("kstar" + kStar[0]);
+                    //Console.WriteLine(kStar[1]);
+                    //Console.WriteLine(kStar[2]);
+                }
+            }
+
+            return (kStar,adversarySuccessRateStar);
+
+        }
+    }
+}
